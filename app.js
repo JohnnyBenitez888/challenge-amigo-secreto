@@ -3,7 +3,8 @@
 
 //Variables
 let amigos = [];
-const ul = document.getElementById("listaAmigos");
+const listaAmigos = document.getElementById("listaAmigos");
+const resultado = document.getElementById("resultado");
 
 function agregarAmigo() {
   let amigo = document.getElementById("amigo").value;
@@ -13,8 +14,6 @@ function agregarAmigo() {
   if (validarEntrada(amigo)) {
     actualizarListaAmigos(amigo);
   }
-
-  //console.log("Lista de amigos: " + amigos); //verificar lista de amigos
 }
 
 function actualizarListaAmigos(amigo) {
@@ -25,10 +24,11 @@ function actualizarListaAmigos(amigo) {
     limpiar();
     amigos.push(`<li>${mayusPrimeraLetra(amigo)}</li>`);
 
-    ul.innerHTML = "";
+    listaAmigos.innerHTML = "";
+    resultado.innerHTML = "";
 
     for (let i = 0; i < amigos.length; i++) {
-      ul.innerHTML += amigos[i];
+      listaAmigos.innerHTML += amigos[i];
     }
 
     console.log("Lista actualizada: " + amigos); //verificar lista actualizada
@@ -36,7 +36,24 @@ function actualizarListaAmigos(amigo) {
 
 }
 
-function sortearAmigo() {}
+function sortearAmigo() {
+    listaAmigos.innerHTML = "";
+    resultado.innerHTML = "";
+    if (amigos.length === 0) {
+        alert("No hay amigos en la lista.");
+        return;
+    }else if (amigos.length === 1) {
+        alert("Solo hay un amigo en la lista, agrega a más amigos." );
+        return;
+    }else{
+        let num = Math.floor(Math.random() * amigos.length);
+        let amigoSorteado = amigos[num];
+        console.log("Amigo sorteado: " + amigoSorteado); //verificar amigo sorteado
+        document.getElementById("resultado").innerHTML = amigoSorteado;
+        amigos.length = 0;
+    }
+}
+
 function limpiar() {
   document.getElementById("amigo").value = "";
 }
