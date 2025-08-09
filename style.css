@@ -1,11 +1,12 @@
 :root {
-    --color-primary: #4B69FD;
+    --color-primary: #9f3647;
     --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
+    --color-tertiary: #8a8888;
     --color-button: #fe652b;
     --color-button-hover: #e55720;
-    --color-text: #444444;
+    --color-text: #0a0a0a;
     --color-white: #FFFFFF;
+    --font-original: 'Montserrat Alternates', sans-serif;
 }
 
 /* Estilos generales */
@@ -55,19 +56,27 @@ body {
 /* Títulos */
 .main-title {
     font-size: 48px;
-    font-family: "Merriweather", serif;
+    font-family: var(--font-original);
     font-weight: 900;
     font-style: italic;
     color: var(--color-white);
 }
 
 .section-title {
-    font-family: "Inter", serif;
+    font-family: var(--font-original);
     font-size: 36px;
     font-weight: 700;
     color: var(--color-primary);
     margin: 10px 0;
     text-align: center;
+}
+
+.img-banner {
+    width: 250px;
+    height: auto;
+    margin-left: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Contenedores de entrada y botón */
@@ -100,25 +109,27 @@ body {
     border: 2px solid #333;
     border-right: none;
     border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
+    font-family: var(--font-original);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos de botón */
 button {
     padding: 15px 30px;
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-original);
     font-size: 16px;
     border: 2px solid #000;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    font-weight: bold;
 }
 
 .button-add {
     background-color: var(--color-tertiary);
-    color: var(--color-text);
+    color: black;
     border-radius: 0 25px 25px 0;
+    font-weight: bold;
 }
 
 .button-add:hover {
@@ -129,7 +140,7 @@ button {
 ul {
     list-style-type: none;
     color: var(--color-text);
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-original);
     font-size: 18px;
     margin: 20px 0;
 }
@@ -137,7 +148,7 @@ ul {
 .result-list {
     margin-top: 15px;
     color: #05DF05;
-    font-size: 22px;
+    font-size: 32px;
     font-weight: bold;
     text-align: center;
 }
@@ -149,7 +160,7 @@ ul {
     width: 100%;
     padding: 10px 40px;
     color: var(--color-white);
-    background-color: var(--color-button);
+    background-color: var(--color-primary);
     font-size: 16px;
 }
 
