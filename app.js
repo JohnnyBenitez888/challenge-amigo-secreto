@@ -33,25 +33,24 @@ function actualizarListaAmigos(amigo) {
 
     console.log("Lista actualizada: " + amigos); //verificar lista actualizada
   }
-
 }
 
 function sortearAmigo() {
-    listaAmigos.innerHTML = "";
-    resultado.innerHTML = "";
-    if (amigos.length === 0) {
-        alert("No hay amigos en la lista.");
-        return;
-    }else if (amigos.length === 1) {
-        alert("Solo hay un amigo en la lista, agrega a más amigos." );
-        return;
-    }else{
-        let num = Math.floor(Math.random() * amigos.length);
-        let amigoSorteado = amigos[num];
-        console.log("Amigo sorteado: " + amigoSorteado); //verificar amigo sorteado
-        document.getElementById("resultado").innerHTML = amigoSorteado;
-        amigos.length = 0;
-    }
+  listaAmigos.innerHTML = "";
+  resultado.innerHTML = "";
+  if (amigos.length === 0) {
+    alert("No hay amigos en la lista.");
+    return;
+  } else if (amigos.length === 1) {
+    alert("Solo hay un amigo en la lista, agrega a más amigos.");
+    return;
+  } else {
+    let num = Math.floor(Math.random() * amigos.length);
+    let amigoSorteado = amigos[num];
+    console.log("Amigo sorteado: " + amigoSorteado); //verificar amigo sorteado
+    document.getElementById("resultado").innerHTML = amigoSorteado;
+    amigos.length = 0;
+  }
 }
 
 function limpiar() {
